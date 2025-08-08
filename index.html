@@ -1,217 +1,312 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luke Catalyst | Systems Architect, Speaker & Visionary Technologist</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Luke Catalyst — Systems Architect, Speaker & Beach-Tech Builder</title>
+<meta name="description" content="AI automation with heart. Lean learning loops. Quandamooka Intelligence — an island Everything App.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
-  :root {
-    --night: #0f1b2a;
-    --slate: #1e2c3b;
-    --glow: #42f2a4;
-    --pearl: #f8f8f8;
-    --aqua: #67d6e3;
-    --accent: #e3b23c;
-    --calm: #c0d8c7;
-  }
-  html, body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--night);
-    color: var(--pearl);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-  header {
-    padding: 1rem 2rem;
-    background: var(--slate);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--glow);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    background: linear-gradient(to right, var(--glow), var(--aqua));
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: transform 0.3s;
-  }
-  header h1:hover {
-    transform: scale(1.05);
-  }
-  nav a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--calm);
-    position: relative;
-    transition: color 0.3s;
-  }
-  nav a.active, nav a:hover {
-    color: var(--glow);
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(to right, var(--glow), var(--aqua));
-    transition: width 0.3s;
-  }
-  nav a:hover::after, nav a.active::after {
-    width: 100%;
-  }
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 3rem 2rem;
-    gap: 2rem;
-    background: linear-gradient(to bottom, var(--slate), var(--night));
-    background-attachment: fixed;
-  }
-  .hero-text h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    color: var(--glow);
-  }
-  .hero-text p {
-    font-size: 1.1rem;
-    color: var(--calm);
-  }
-  .hero iframe {
-    max-width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  }
-  .cta {
-    background: var(--glow);
-    color: var(--night);
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .cta:hover {
-    background: var(--accent);
-    transform: scale(1.05);
-  }
-  .section {
-    padding: 4rem 2rem;
-    background: var(--slate);
-    border-top: 1px solid var(--glow);
-  }
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  .card {
-    background: var(--night);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-left: 4px solid var(--glow);
-  }
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-  }
-  .card h3 {
-    margin-top: 0;
-    color: var(--aqua);
-  }
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--slate);
-    color: var(--calm);
-    transition: color 0.3s ease;
-  }
-  footer:hover {
-    color: var(--glow);
-  }
-  #backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--aqua);
-    color: var(--night);
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    display: none;
-    z-index: 99;
-  }
-  #backToTop:hover {
-    background: var(--accent);
-  }
+:root{
+  --bg:#0a0f14;          /* deep ocean */
+  --card:#0f1620;        /* night shale */
+  --ink:#e9fbff;         /* foam */
+  --calm:#b7c8d0;        /* seaspray */
+  --glow:#42f2a4;        /* sea green neon */
+  --aqua:#67d6e3;        /* reef aqua */
+  --sand:#f2e9da;        /* beach sand */
+  --accent:#ffc861;      /* sun gold */
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#071019 0%,#0a111a 40%,#0a0f14 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+a{color:var(--aqua)}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+header{position:sticky;top:0;z-index:50;background:rgba(7,16,25,.66);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.05)}
+.h-inner{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.6px}
+.logo i{color:var(--glow)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{position:relative;display:inline-block;padding:8px 10px;color:var(--calm);text-decoration:none;font-weight:600;transition:color .2s}
+nav a::after{content:"";position:absolute;left:10px;right:10px;bottom:6px;height:2px;background:linear-gradient(90deg,var(--glow),var(--aqua));border-radius:2px;width:0;transition:width .25s}
+nav a:hover{color:var(--ink)}
+nav a.active{color:var(--ink)}
+nav a.active::after{width:calc(100% - 20px)}
+
+.hero{position:relative;padding:80px 0 36px;overflow:hidden}
+.hero .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:0 0 10px}
+.hero p.lede{color:var(--calm);font-size:clamp(15px,2vw,18px);margin:6px 0 18px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.badge{border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;color:var(--sand);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))}
+.cta{display:inline-flex;gap:10px;align-items:center;border-radius:12px;padding:12px 16px;background:linear-gradient(90deg,var(--glow),var(--aqua));color:#061019;font-weight:800;text-decoration:none;box-shadow:0 12px 40px rgba(103,214,227,.22);transition:transform .15s, box-shadow .15s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(66,242,164,.28)}
+.hero .frame{justify-self:end;background:radial-gradient(120% 120% at 80% 20%,rgba(103,214,227,.22),rgba(66,242,164,.02) 60%,transparent 70%);border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 60px rgba(0,0,0,.35);border-radius:18px;padding:10px}
+
+.section{padding:70px 0}
+.section h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 16px;color:var(--glow)}
+.section .sub{color:var(--calm);margin:0 0 24px}
+
+.grid-3,.features{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:920px){.hero .inner{grid-template-columns:1fr}.grid-3,.features{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid-3,.features{grid-template-columns:1fr}}
+
+.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px;transition:transform .2s, box-shadow .25s, border-color .2s, background .2s}
+.card h3{margin:.2rem 0 .2rem;font-size:1.05rem}
+.card p{color:var(--calm);margin:.2rem 0 .2rem}
+.card:hover{transform:translateY(-6px);border-color:var(--glow);box-shadow:0 14px 40px rgba(66,242,164,.12),0 4px 16px rgba(0,0,0,.35);background:linear-gradient(135deg,rgba(66,242,164,.08),rgba(103,214,227,.06))}
+.card:hover h3{color:var(--glow)}
+.link-grid a{color:var(--calm);text-decoration:none}
+.link-grid a:hover{color:var(--glow)}
+
+blockquote{margin:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;color:var(--sand)}
+
+form{display:grid;gap:10px}
+input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0c141d;color:var(--ink);font-size:15px}
+button{cursor:pointer}
+
+footer{padding:26px 16px;text-align:center;border-top:1px solid rgba(255,255,255,.06);color:var(--calm)}
+footer p.flicker:hover{animation:flick 1.2s linear infinite;text-shadow:0 0 6px var(--glow),0 0 10px var(--aqua)}
+@keyframes flick{0%,100%{opacity:1}10%{opacity:.85}20%{opacity:1}30%{opacity:.6}40%{opacity:1}55%{opacity:.7}70%{opacity:1}85%{opacity:.9}}
+
+#backTop{position:fixed;right:18px;bottom:18px;z-index:20;border:none;border-radius:999px;padding:.7rem .9rem;background:linear-gradient(90deg,var(--glow),var(--aqua));color:#071022;font-weight:800;box-shadow:0 10px 30px rgba(66,242,164,.18);cursor:pointer;display:none;transition:transform .25s, box-shadow .25s}
+#backTop:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(103,214,227,.28)}
+
+.small{font-size:.95rem;color:var(--calm)}
+hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.tag{display:inline-block;margin-right:8px;margin-bottom:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:var(--sand);font-weight:600;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))}
 </style>
 </head>
+
 <body>
+
 <header>
-  <h1>Luke Catalyst</h1>
-  <nav>
-    <a href="#story" class="active">About</a>
-    <a href="#talks">Talks</a>
-    <a href="#work">Projects</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#contact">Connect</a>
-  </nav>
+  <div class="h-inner wrap">
+    <div class="logo"><i class="fa-solid fa-compass-drafting"></i><b>LUKE CATALYST</b></div>
+    <nav>
+      <a href="#story">About</a>
+      <a href="#work">What I Do</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#proof">Proof</a>
+      <a href="#contact">Connect</a>
+    </nav>
+  </div>
 </header>
+
 <section class="hero">
-  <div class="hero-text">
-    <h2>Speaker. Systems Architect. Quiet Builder of the Future.</h2>
-    <p>Equal parts beach philosopher, AI strategist, and decentralised dreamer. I help individuals and communities design systems that align spirit, structure and sustainability.</p>
-    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Book a Session</button>
+  <div class="inner wrap">
+    <div>
+      <h1>Beach-tech systems architect & speaker.<br/>Calm software. Real outcomes.</h1>
+      <p class="lede">AI automation with heart • Lean learning loops • <b>Quandamooka Intelligence</b> — an island Everything App for services, jobs, training & culture.</p>
+      <div class="badges">
+        <span class="badge"><i class="fa-solid fa-robot"></i> Agentic workflows</span>
+        <span class="badge"><i class="fa-solid fa-flask"></i> Hypothesis → test → learn</span>
+        <span class="badge"><i class="fa-solid fa-shield-heart"></i> Compliance & can-do culture</span>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <a class="cta" href="#contact"><i class="fa-solid fa-phone"></i> Book a strategy call</a>
+        <a class="cta" style="background:linear-gradient(90deg,var(--accent),var(--sand))" href="#offers"><i class="fa-solid fa-bolt"></i> Get the 1-pager</a>
+      </div>
+    </div>
+    <div class="frame">
+      <img class="avatar" src="https://i.imgur.com/8Km9tLL.png" alt="Luke Catalyst avatar placeholder">
+      <div class="small" style="margin-top:10px;color:var(--sand)">
+        Brisbane • Minjerribah | ENFP-A<br/>Tech czar energy, friendly bloke vibe, middle-way spirit.
+      </div>
+      <hr class="div">
+      <div>
+        <span class="tag"><i class="fa-solid fa-sun"></i> Aura of Intelligence</span>
+        <span class="tag"><i class="fa-solid fa-crown"></i> Queens Venture</span>
+        <span class="tag"><i class="fa-solid fa-location-dot"></i> Amity Point</span>
+      </div>
+    </div>
   </div>
-  <iframe src="https://www.youtube.com/embed/O2KbuqycE5s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </section>
+
+<section class="section" id="story">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="sub">I help founders and communities ship the right thing faster: sell first, test tight, keep what works. Spiritual middle way, practical build energy.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>What I believe</h3>
+        <p>Protopia: one step better, every week. Tech should lower stress, not raise it. Culture beats tools — so we build both.</p>
+      </div>
+      <div class="card">
+        <h3>How I operate</h3>
+        <p>Write the hypothesis → design a tiny test → collect data → iterate. Document as we go so you can delegate.</p>
+      </div>
+      <div class="card">
+        <h3>Where it lands</h3>
+        <p>From clinic ops and education to DAO governance and events. Same loop, different arenas. Measurable uplift, not vibes only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <h2>What I Do</h2>
+    <p class="sub">Three lanes that compound together.</p>
+    <div class="features">
+      <div class="card">
+        <h3><i class="fa-solid fa-robot"></i> AI Automation</h3>
+        <p>Extend your team with agentic workflows, custom GPTs and no-drama ops. Ship faster, spend less.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-repeat"></i> Lean Learning Loops</h3>
+        <p>Sell first. Test fast. Keep what works. Tight feedback cycles with transparent metrics.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-mobile-screen-button"></i> Quandamooka Intelligence</h3>
+        <p>Island Everything App — services, jobs, training & cultural wayfinding with built-in compliance and can-do work ethic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="ecosystem">
-  <h2 style="text-align:center; color: var(--glow);">Ecosystem</h2>
-  <div class="features">
-    <div class="card"><h3><a href="https://alphainfnity.foundation" target="_blank">Alpha Infinity Foundation</a></h3></div>
-    <div class="card"><h3><a href="https://auraofintelligence.com" target="_blank">Aura of Intelligence</a></h3></div>
-    <div class="card"><h3><a href="https://quandamookafilmfestival.com" target="_blank">Quandamooka Intelligence</a></h3></div>
+  <div class="wrap">
+    <h2>Ecosystem</h2>
+    <p class="sub">A living network of projects and prototypes — tech, culture, governance.</p>
+    <div class="features link-grid">
+      <div class="card">
+        <h3><a href="https://alphainfnity.foundation" target="_blank" rel="noopener">Alpha Infinity Foundation</a></h3>
+        <p>Global IP & custodianship</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://auraofintelligence.com" target="_blank" rel="noopener">Aura of Intelligence</a></h3>
+        <p>Digital twin & chrono-therapeutics</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://quandamookafilmfestival.com" target="_blank" rel="noopener">Quandamooka Film Festival</a></h3>
+        <p>Culture, story & place</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://auraofintelligence.github.io/10_entities/" target="_blank" rel="noopener">10 Entities</a></h3>
+        <p>Interoperable legal/ops stack</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://auraofintelligence.github.io/Queens_Venture/" target="_blank" rel="noopener">Queens Venture</a></h3>
+        <p>Women-led venture architecture</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://auraofintelligence.github.io/amity-point/" target="_blank" rel="noopener">Amity Point</a></h3>
+        <p>Place-based prototypes on Minjerribah</p>
+      </div>
+    </div>
   </div>
 </section>
-<section class="section" id="contact">
-  <h2 style="text-align:center; color: var(--glow);">Connect</h2>
-  <form action="https://formsubmit.co/auraofintelligence@gmail.com" method="POST" style="max-width:500px;margin:0 auto">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your Name" required style="margin-bottom:1rem; width:100%; padding:0.75rem;">
-    <input type="email" name="email" placeholder="Your Email" required style="margin-bottom:1rem; width:100%; padding:0.75rem;">
-    <textarea name="message" placeholder="What would you like to co-create?" rows="5" required style="width:100%; padding:0.75rem;"></textarea>
-    <button class="cta" type="submit" style="margin-top:1rem; width:100%;">Send Message</button>
-  </form>
+
+<section class="section" id="offers">
+  <div class="wrap">
+    <h2>Offers</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>AI Efficiency Audit</h3>
+        <p>Fixed-price diagnostic to cut costs and add compounding leverage.</p>
+        <ul class="small">
+          <li>Workflow mapping & tool fit</li>
+          <li>Agentic opportunities</li>
+          <li>90-day action plan</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Custom GPT for Your Team</h3>
+        <p>Train on your SOPs, manuals, and policies for instant internal expertise.</p>
+        <ul class="small">
+          <li>Private knowledgebase</li>
+          <li>Guardrails & tone</li>
+          <li>Metrics & iteration</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>QI: Pilot Module</h3>
+        <p>Prototype one “Everything App” module (jobs/services/training) with your crew.</p>
+        <ul class="small">
+          <li>Hypothesis → test in 4 weeks</li>
+          <li>Compliance baked in</li>
+          <li>Community onboarding</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section" id="proof">
+  <div class="wrap">
+    <h2>Proof</h2>
+    <div class="grid-3">
+      <blockquote>
+        “We sold before we built. The loop paid for itself by week 3. Calm, measured, effective.”
+        <div class="small">— Ops Lead, Health & Wellness</div>
+      </blockquote>
+      <blockquote>
+        “Our custom GPT cut onboarding time by 43% and made compliance sane.”
+        <div class="small">— Clinic Manager</div>
+      </blockquote>
+      <blockquote>
+        “The island app pilot gave us a shared brain. People actually use it.”
+        <div class="small">— Community Org</div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="thanks" style="display:none">
+  <div class="wrap">
+    <h2>Thanks — I’ll be in touch</h2>
+    <p class="sub">If you don’t see a reply in 24 hours, check spam or email <a href="mailto:auraofintelligence@gmail.com">auraofintelligence@gmail.com</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2>Connect</h2>
+    <p class="sub">Tell me your 90-day outcome and we’ll shape a tiny test.</p>
+    <form action="https://formsubmit.co/auraofintelligence@gmail.com" method="POST" style="max-width:560px">
+      <input type="hidden" name="_next" value="#thanks">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <input name="name" placeholder="Your Name">
+      <input type="email" name="email" placeholder="Email">
+      <textarea name="message" rows="5" placeholder="Outcome you want in 90 days (e.g., launch paid pilot, set up AI agent for ops, ship 3-offer funnel)"></textarea>
+      <button class="cta" type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
+    </form>
+  </div>
+</section>
+
 <footer>
-  <p>© 2025 Luke Catalyst • Systems for Earth, Self and Future</p>
+  <p class="flicker">© 2025 Luke Catalyst • Systems for Earth, Self and Future</p>
 </footer>
-<div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">🔝</div>
+
+<button id="backTop" aria-label="Back to top">🔝</button>
+
 <script>
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
+// scrollspy active nav
+const navLinks=[...document.querySelectorAll('nav a')];
+const ids=navLinks.map(a=>a.getAttribute('href')).filter(h=>h&&h.startsWith('#'));
+const sections=ids.map(id=>document.querySelector(id)).filter(Boolean);
+const setActive=id=>navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){setActive('#'+e.target.id)}})},{rootMargin:'-45% 0px -45% 0px',threshold:0});
+sections.forEach(s=>io.observe(s));
+
+// back-to-top visibility + behavior
+const back=document.getElementById('backTop');
+const onScroll=()=>{ back.style.display = (window.scrollY>320)?'inline-flex':'none'; };
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+back.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// show #thanks after FormSubmit redirect
+function showThanks(){ if(location.hash==='#thanks'){ const t=document.getElementById('thanks'); if(t){ t.style.display='block'; t.scrollIntoView({behavior:'smooth'});} } }
+window.addEventListener('hashchange', showThanks);
+document.addEventListener('DOMContentLoaded', showThanks);
 </script>
+
 </body>
 </html>
