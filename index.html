@@ -78,8 +78,11 @@ footer p.flicker:hover{animation:flick 1.2s linear infinite;text-shadow:0 0 6px 
 
 .small{font-size:.95rem;color:var(--calm)}
 hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
-.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);box-shadow:0 10px 30px rgba(0,0,0,.4)}
 .tag{display:inline-block;margin-right:8px;margin-bottom:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:var(--sand);font-weight:600;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01))}
+.video-card{padding:0;border-radius:18px;overflow:hidden}
+.video-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#0c141d}
+.video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
 </style>
 </head>
 
@@ -113,11 +116,16 @@ hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
         <a class="cta" style="background:linear-gradient(90deg,var(--accent),var(--sand))" href="#offers"><i class="fa-solid fa-bolt"></i> Get the 1-pager</a>
       </div>
     </div>
-    <div class="frame">
-      <img class="avatar" src="https://i.imgur.com/8Km9tLL.png" alt="Luke Catalyst avatar placeholder">
-      <div class="small" style="margin-top:10px;color:var(--sand)">
-        Brisbane • Minjerribah | ENFP-A<br/>Tech czar energy, friendly bloke vibe, middle-way spirit.
-      </div>
+    <div class="frame video-card">
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/O2KbuqycE5s ?rel=0&modestbranding=1&playsinline=1&autoplay=0&controls=1"
+      title="Meet Luke Catalyst"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</div>
       <hr class="div">
       <div>
         <span class="tag"><i class="fa-solid fa-sun"></i> Aura of Intelligence</span>
@@ -131,19 +139,19 @@ hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
 <section class="section" id="story">
   <div class="wrap">
     <h2>About</h2>
-    <p class="sub">I help founders and communities ship the right thing faster: sell first, test tight, keep what works. Spiritual middle way, practical build energy.</p>
+    <p class="sub">I help founders and communities build the right thing faster: seed first, test tight, keep what works. Spiritual middle way, practical build energy.</p>
     <div class="grid-3">
       <div class="card">
         <h3>What I believe</h3>
-        <p>Protopia: one step better, every week. Tech should lower stress, not raise it. Culture beats tools — so we build both.</p>
+        <p>Protopia: one step better, every week. Tech should lower stress, not raise it. Culture is built by tools — so we build both.</p>
       </div>
       <div class="card">
         <h3>How I operate</h3>
-        <p>Write the hypothesis → design a tiny test → collect data → iterate. Document as we go so you can delegate.</p>
+        <p>Write the hypothesis → design a tiny test → collect data → iterate. Document as we go so feedback and delegation becomes natural.</p>
       </div>
       <div class="card">
         <h3>Where it lands</h3>
-        <p>From clinic ops and education to DAO governance and events. Same loop, different arenas. Measurable uplift, not vibes only.</p>
+        <p>From clinic operations and education to governance and events. Same loop, different arenas. Measurable uplift, on-demand intelligence.</p>
       </div>
     </div>
   </div>
@@ -164,7 +172,7 @@ hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
       </div>
       <div class="card">
         <h3><i class="fa-solid fa-mobile-screen-button"></i> Quandamooka Intelligence</h3>
-        <p>Island Everything App — services, jobs, training & cultural wayfinding with built-in compliance and can-do work ethic.</p>
+        <p>Island Everything App — services, jobs, training & cultural wayfinding with built-in compliance.</p>
       </div>
     </div>
   </div>
@@ -176,16 +184,16 @@ hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
     <p class="sub">A living network of projects and prototypes — tech, culture, governance.</p>
     <div class="features link-grid">
       <div class="card">
-        <h3><a href="https://alphainfnity.foundation" target="_blank" rel="noopener">Alpha Infinity Foundation</a></h3>
+        <h3><a href="https://alphainfinity.foundation" target="_blank" rel="noopener">Alpha Infinity Foundation</a></h3>
         <p>Global IP & custodianship</p>
       </div>
       <div class="card">
         <h3><a href="https://auraofintelligence.com" target="_blank" rel="noopener">Aura of Intelligence</a></h3>
-        <p>Digital twin & chrono-therapeutics</p>
+        <p>Digital twins of body & mind</p>
       </div>
       <div class="card">
         <h3><a href="https://quandamookafilmfestival.com" target="_blank" rel="noopener">Quandamooka Film Festival</a></h3>
-        <p>Culture, story & place</p>
+        <p>Inclusive culture, story & place</p>
       </div>
       <div class="card">
         <h3><a href="https://auraofintelligence.github.io/10_entities/" target="_blank" rel="noopener">10 Entities</a></h3>
@@ -197,7 +205,7 @@ hr.div{border:none;border-top:1px solid rgba(255,255,255,.08);margin:14px 0}
       </div>
       <div class="card">
         <h3><a href="https://auraofintelligence.github.io/amity-point/" target="_blank" rel="noopener">Amity Point</a></h3>
-        <p>Place-based prototypes on Minjerribah</p>
+        <p>Mixed sand sports, film and culture</p>
       </div>
     </div>
   </div>
