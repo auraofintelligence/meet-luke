@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luke Catalyst — AI, Community & Culture | Minjerribah</title>
+<meta name="description" content="I help communities and founders weave AI, culture, and clean-tech into living systems. Book a strategy session or join the Aura Odyssey.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<meta property="og:title" content="Luke Catalyst — AI, Community & Culture">
+<meta property="og:description" content="Regenerative systems design from Minjerribah. Book a strategy session or join the Aura Odyssey.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lukecatalyst.com/life-gallery/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#0b1020; --ink:#eaf1ff; --muted:#a8b3cf; --accent:#66f0c9; --ink2:#d3dcff;
+  --card:#111734; --stroke:#253057; --brand:#7cf7e3; --warn:#ffce6b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(1200px 800px at 80% -10%,#1a2350 0%, #0b1020 55%), #0b1020;color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:var(--brand);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:700;letter-spacing:.2px}
+.btn.primary{background:linear-gradient(90deg,#59e6ff,#7cf7e3);color:#071022}
+.btn.ghost{border:1px solid var(--stroke);color:var(--ink);background:rgba(255,255,255,.02)}
+.badge{font-size:12px;padding:6px 10px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;color:#091022;background:#c9ffe5;padding:4px 8px;border-radius:8px;margin-right:8px}
+.header{position:sticky;top:0;backdrop-filter:blur(8px);background:rgba(7,12,28,.45);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+.header .inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo b{background:linear-gradient(90deg,#7cf7e3,#59e6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav a{color:var(--ink2);margin-left:18px;font-weight:600}
+.hero{padding:64px 0 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:20px}}
+.kicker{margin:6px 0 12px}
+h1{font-size:42px;line-height:1.1;margin:0 0 14px}
+h2{font-size:28px;margin:0 0 12px}
+p{color:var(--ink2)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--stroke);border-radius:16px}
+.media{aspect-ratio:16/9;background:#0a122a;border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
+.media img, .media video{width:100%;height:100%;object-fit:cover;display:block}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+.section{padding:56px 0}
+.check{display:flex;gap:10px;align-items:flex-start}
+.check i{width:20px;height:20px;border-radius:6px;background:#193a3a;border:1px solid #2a7a77;display:inline-grid;place-items:center;font-size:14px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#23315b,transparent);margin:28px 0}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.pricing{grid-template-columns:1fr}}
+.price .head{padding:18px;border-bottom:1px solid var(--stroke)}
+.price .body{padding:18px}
+.price h3{margin:0 0 8px}
+.small{font-size:12px;color:var(--muted)}
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.testi{grid-template-columns:1fr}}
+.quote{padding:16px}
+.lead .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
+@media(max-width:900px){.lead .inner{grid-template-columns:1fr}}
+input,textarea{width:100%;padding:12px 14px;background:#0a122a;border:1px solid var(--stroke);border-radius:12px;color:var(--ink)}
+label{font-size:13px;color:var(--muted)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.formgrid{grid-template-columns:1fr}}
+.faq details{background:rgba(255,255,255,.02);border:1px solid var(--stroke);border-radius:12px;padding:12px}
+.faq summary{cursor:pointer;font-weight:700}
+.footer{padding:32px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+.sticky-cta{position:fixed;right:16px;bottom:16px;display:flex;gap:10px;z-index:20}
+</style>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Luke Catalyst (Luke Hayes)",
+ "url":"https://lukecatalyst.com",
+ "sameAs":["https://iseeinfinity.com","https://youtube.com/@lukehayes360vr"],
+ "jobTitle":"Regenerative Systems Architect",
+ "knowsAbout":["Artificial Intelligence","Digital Twins","Community Energy","Regenerative Tourism"],
+ "worksFor":{"@type":"Organization","name":"Aura of Intelligence"}
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container inner">
+    <div class="logo"><span class="badge">Minjerribah ↔ Global</span> <b>LUKE CATALYST</b></div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#offer">Offers</a>
+      <a href="#proof">Proof</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero container">
+  <div>
+    <div class="kicker badge">AI × Community × Culture</div>
+    <h1>Regenerative systems, not just products.</h1>
+    <p>I help founders, councils and communities weave AI, culture, and clean-tech into <b>living systems</b> that pay their own way. If you want a story that rallies people and an engine that scales, let’s build it.</p>
+    <div style="display:flex;gap:12px;margin-top:18px">
+      <a class="btn primary" href="#contact">Book Strategy Call</a>
+      <a class="btn ghost" href="#lead">Download 1-Page Plan</a>
+    </div>
+    <div style="margin-top:14px" class="small">As seen across projects on Minjerribah • India collaborations • XR & wellness prototypes</div>
+  </div>
+  <div class="media card">
+    <!-- Swap with your video / hero image -->
+    <video autoplay muted loop playsinline>
+      <source src="https://lukecatalyst.com/life-gallery/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section id="work" class="section container">
+  <div class="grid-3">
+    <div class="card" style="padding:18px">
+      <h2>What I Do</h2>
+      <div class="check"><i>✓</i><p>Design <b>Black-Car Products</b>: one problem, solved exceptionally well, with a path to recurring revenue.</p></div>
+      <div class="check"><i>✓</i><p>Build <b>Lean Learning Loops</b>: sell first, test fast, and scale what works.</p></div>
+      <div class="check"><i>✓</i><p>Architect <b>Interlocking Entities</b>: brand, DAO, clinic/lab, event engine — humming together.</p></div>
+    </div>
+    <div class="card" style="padding:18px">
+      <h2>Why It Works</h2>
+      <p>We combine solid unit economics with story, place and proof. The result is a system people believe in — and buy into.</p>
+      <ul class="small">
+        <li>Recurring margins (70%+ target) from licenses, memberships, certifications</li>
+        <li>Distribution via story-first media & TikTok Shop live commerce</li>
+        <li>Governance & trust from transparent playbooks</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:18px">
+      <h2>Who I Am</h2>
+      <p>City-and-island kid who kept coming back to Minjerribah every school holiday and long weekend. I’ve worked construction, festivals, and AI R&D — now I weave it all into practical systems for people and place.</p>
+    </div>
+  </div>
+</section>
+
+<section id="offer" class="section container">
+  <h2>Pick your entry lane</h2>
+  <div class="pricing">
+    <div class="price card">
+      <div class="head"><h3>AI Efficiency Audit</h3><div class="small">Fixed fee • 2 weeks</div></div>
+      <div class="body">
+        <p>We map workflows, pick high-ROI automations, and deliver a 30-day execution plan.</p>
+        <ul>
+          <li>Process map + stack recommendations</li>
+          <li>Content & data ops quick wins</li>
+          <li>Training for your core team</li>
+        </ul>
+        <a class="btn primary" href="#contact">Enquire</a>
+      </div>
+    </div>
+    <div class="price card" style="border:2px solid #66f0c9">
+      <div class="head"><h3>Aura Odyssey: 60-Day Reset</h3><div class="small">Flagship • Limited cohorts</div></div>
+      <div class="body">
+        <p>A narrative-driven wellness + AI twin build. Protocol design, data ethics, and partner locations.</p>
+        <ul>
+          <li>Digital twin onboarding & privacy setup</li>
+          <li>Chrono-therapeutic session plan</li>
+          <li>Story, culture & place integration</li>
+        </ul>
+        <a class="btn primary" href="#contact">Apply</a>
+      </div>
+    </div>
+    <div class="price card">
+      <div class="head"><h3>Founders’ Story Engine</h3><div class="small">3 weeks • Done-with-you</div></div>
+      <div class="body">
+        <p>Clarify your <b>What-How-Who</b>, build the deck, scripts, TikTok LIVE plan, and a launch calendar.</p>
+        <ul>
+          <li>3 “Who” scripts (30s/90s/3-min)</li>
+          <li>Sales page + live shopping flow</li>
+          <li>Metrics & playbook handover</li>
+        </ul>
+        <a class="btn primary" href="#contact">Start</a>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="small">Want something custom? <a href="#contact">Say hello</a> with a few lines on your goals and constraints.</p>
+</section>
+
+<section id="proof" class="section container">
+  <h2>Proof & projects</h2>
+  <div class="grid-3">
+    <div class="card media"><img src="https://lukecatalyst.com/life-gallery/thumb1.jpg" alt="XR & Wellness prototype"></div>
+    <div class="card media"><img src="https://lukecatalyst.com/life-gallery/thumb2.jpg" alt="Festival & culture work"></div>
+    <div class="card media"><img src="https://lukecatalyst.com/life-gallery/thumb3.jpg" alt="Community energy sketch"></div>
+  </div>
+  <div class="testi" style="margin-top:18px">
+    <div class="card quote">
+      <p>“Clear, values-aligned, and practical. We shipped in weeks, not months.”</p>
+      <div class="small">— Partner, AI strategy (India)</div>
+    </div>
+    <div class="card quote">
+      <p>“A story people can believe in — and a plan that pays for itself.”</p>
+      <div class="small">— Community org (QLD)</div>
+    </div>
+    <div class="card quote">
+      <p>“Best combo of narrative, tech and economics we’ve seen.”</p>
+      <div class="small">— Early-stage founder</div>
+    </div>
+  </div>
+</section>
+
+<section id="lead" class="section container lead card">
+  <div class="inner" style="padding:18px">
+    <div>
+      <h2>Free download: The 1-Page System Plan</h2>
+      <p>My cheat-sheet for turning story + system into revenue: Black-Car Product, Lean Loop, and the 30-day launch cadence. I’ll send occasional field notes; unsubscribe anytime.</p>
+      <form action="https://your-email-tool.com/forms/xyz" method="post">
+        <div class="formgrid">
+          <div><label>Name</label><input name="name" required></div>
+          <div><label>Email</label><input type="email" name="email" required></div>
+        </div>
+        <div style="margin-top:12px"><button class="btn primary" type="submit">Send me the 1-pager</button></div>
+        <div class="small" style="margin-top:8px">By submitting you agree to the privacy policy.</div>
+      </form>
+    </div>
+    <div class="card media">
+      <img src="https://lukecatalyst.com/life-gallery/onepager-mock.png" alt="1-Page Plan Preview">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section container">
+  <h2>Book a strategy call</h2>
+  <p>Tell me where you are and where you want to be. I’ll reply with a quick plan and booking link.</p>
+  <form action="https://your-crm-or-zapier-webhook" method="post" class="card" style="padding:18px">
+    <div class="formgrid">
+      <div><label>First name</label><input name="first_name" required></div>
+      <div><label>Email</label><input type="email" name="email" required></div>
+    </div>
+    <label style="margin-top:10px">What’s the outcome you want in 90 days?</label>
+    <textarea name="goal" rows="4" placeholder="e.g., Launch a paid pilot for our clinic; Stand up a TikTok LIVE commerce flow; Ship a 3-offer funnel."></textarea>
+    <div style="display:flex;gap:12px;margin-top:12px">
+      <button class="btn primary" type="submit">Request call</button>
+      <a class="btn ghost" href="https://calendly.com/YOUR-LINK">Or pick a time</a>
+    </div>
+  </form>
+  <p class="small" style="margin-top:12px">Prefer DMs? <a href="mailto:meetlukenathan@gmail.com">meetlukenathan@gmail.com</a></p>
+</section>
+
+<section class="section container faq">
+  <h2>Questions, answered</h2>
+  <div class="grid-3">
+    <details open><summary>What’s your typical engagement?</summary><p>Start with a 60–90 min diagnostic, then a 30-day sprint to ship “the first flywheel”: offer, sales page, content cadence, and the first live activation.</p></details>
+    <details><summary>Do you work with councils and Indigenous orgs?</summary><p>Yes. I co-design with local leaders; IP and data sovereignty are respected via clear licences and opt-in data models.</p></details>
+    <details><summary>How do we measure success?</summary><p>We agree on a 3-metric scoreboard before we start (e.g., recurring revenue, CAC:LTV, weekly active members) and review weekly.</p></details>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>© <script>document.write(new Date().getFullYear())</script> Luke Catalyst</div>
+    <div class="small">Made on Minjerribah spirit time. <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn primary" href="#contact">Book Call</a>
+  <a class="btn ghost" href="#lead">Get 1-Pager</a>
+</div>
+
+</body>
+</html>
