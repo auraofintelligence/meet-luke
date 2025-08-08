@@ -1,319 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luke Catalyst | Systems Architect, Speaker & Visionary Technologist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-tW9gGk5o3G7pPpTqU0jvQYQkqYkZrG9b0m3Q0l3V8rZb9yEouyJpW0QvN4kZp1r9F4pZ8b2xQxqfJY0d6R2o9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 <style>
-  :root{
-    --night:#0b1220;--slate:#111b2b;--ink:#eaf1ff;--muted:#aab6d6;--glow:#42f2a4;--aqua:#67d6e3;--accent:#e3b23c;--card:#0f1b2a;--line:#24345a;--coral:#ff9776;
+  :root {
+    --night: #0f1b2a;
+    --slate: #1e2c3b;
+    --glow: #42f2a4;
+    --pearl: #f8f8f8;
+    --aqua: #67d6e3;
+    --accent: #e3b23c;
+    --calm: #c0d8c7;
   }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:radial-gradient(1200px 800px at 80% -10%,#1a2350 0%, #0b1220 55%), #0b1220;color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;overflow-x:hidden}
-  a{color:var(--aqua);text-decoration:none}
-  /* particles canvas */
-  #particles{position:fixed;inset:0;z-index:-1}
-  /* header */
-  header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(10,16,32,.7);border-bottom:1px solid rgba(255,255,255,.08);z-index:50}
-  .h-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-  .logo i{color:var(--glow)}
-  .logo b{background:linear-gradient(90deg,var(--glow),var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
-  nav a{margin-left:18px;color:var(--muted);font-weight:700;position:relative}
-  nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:linear-gradient(90deg,var(--glow),var(--aqua));transition:width .25s}
-  nav a:hover{color:var(--ink)}
-  nav a:hover::after{width:100%}
-  /* hero */
-  .hero{max-width:1200px;margin:0 auto;padding:64px 20px 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-  @media(max-width:980px){.hero{grid-template-columns:1fr}}
-  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-  .kicker i{color:var(--glow)}
-  h1{font-size:42px;line-height:1.1;margin:10px 0 12px}
-  h1 .grad{background:linear-gradient(90deg,var(--glow),var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{color:var(--muted)}
-  .cta{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:800;letter-spacing:.2px;background:linear-gradient(90deg,var(--glow),var(--aqua));color:#071022;box-shadow:0 10px 30px rgba(66,242,164,.15);transition:transform .2s, box-shadow .2s}
-  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(103,214,227,.25)}
-  .btn-ghost{border:1px solid var(--line);color:var(--ink);padding:12px 16px;border-radius:12px}
-  .media{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 16px 50px rgba(0,0,0,.35)}
-  .avatar{position:absolute;bottom:10px;left:10px;display:flex;align-items:center;gap:10px;background:rgba(10,14,28,.7);backdrop-filter:blur(8px);border:1px solid var(--line);padding:8px 10px;border-radius:12px}
-  .avatar img{width:36px;height:36px;border-radius:50%;object-fit:cover}
-  /* sections */
-  section.section{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border-top:1px solid rgba(255,255,255,.06)}
-  .wrap{max-width:1200px;margin:0 auto;padding:56px 20px}
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:980px){.grid-3{grid-template-columns:1fr}}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:18px;position:relative;overflow:hidden}
-  .card .icon{font-size:22px;color:var(--glow)}
-  .card h3{margin:8px 0 6px}
-  .glow-border::before{content:"";position:absolute;inset:0;padding:1px;border-radius:16px;background:linear-gradient(90deg,transparent,rgba(66,242,164,.8),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:shine 4s linear infinite}
-  @keyframes shine{0%{background-position:-200% 0}100%{background-position:200% 0}}
-  /* portfolio */
-  .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-  @media(max-width:980px){.gallery{grid-template-columns:repeat(3,1fr)}}
-  .tile{aspect-ratio:1/1;background:#0a1428;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-  .tile:hover img{transform:scale(1.05)}
-  /* offers */
-  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:980px){.pricing{grid-template-columns:1fr}}
-  .price .head{padding:18px;border-bottom:1px solid var(--line)}
-  .price .body{padding:18px}
-  .small{font-size:12px;color:var(--muted)}
-  /* testimonials */
-  .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:980px){.testi{grid-template-columns:1fr}}
-  .quote{padding:16px;display:grid;grid-template-columns:auto 1fr;gap:12px}
-  .quote img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-  /* contact */
-  form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  @media(max-width:980px){form .row{grid-template-columns:1fr}}
-  input,textarea{width:100%;padding:12px 14px;background:#0a1428;border:1px solid var(--line);border-radius:12px;color:var(--ink)}
-  footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 20px;color:var(--muted);text-align:center}
+  html, body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--night);
+    color: var(--pearl);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  header {
+    padding: 1rem 2rem;
+    background: var(--slate);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--glow);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, var(--glow), var(--aqua));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform 0.3s;
+  }
+  header h1:hover {
+    transform: scale(1.05);
+  }
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--calm);
+    position: relative;
+    transition: color 0.3s;
+  }
+  nav a.active, nav a:hover {
+    color: var(--glow);
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, var(--glow), var(--aqua));
+    transition: width 0.3s;
+  }
+  nav a:hover::after, nav a.active::after {
+    width: 100%;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    background: linear-gradient(to bottom, var(--slate), var(--night));
+    background-attachment: fixed;
+  }
+  .hero-text h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--glow);
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+    color: var(--calm);
+  }
+  .hero iframe {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+  .cta {
+    background: var(--glow);
+    color: var(--night);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .cta:hover {
+    background: var(--accent);
+    transform: scale(1.05);
+  }
+  .section {
+    padding: 4rem 2rem;
+    background: var(--slate);
+    border-top: 1px solid var(--glow);
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .card {
+    background: var(--night);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 4px solid var(--glow);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: var(--aqua);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--slate);
+    color: var(--calm);
+    transition: color 0.3s ease;
+  }
+  footer:hover {
+    color: var(--glow);
+  }
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--aqua);
+    color: var(--night);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 99;
+  }
+  #backToTop:hover {
+    background: var(--accent);
+  }
 </style>
 </head>
 <body>
-<canvas id="particles"></canvas>
 <header>
-  <div class="h-inner">
-    <div class="logo"><i class="fa-solid fa-compass-drafting"></i> <b>LUKE CATALYST</b></div>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#offers">Offers</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#proof">Proof</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+  <h1>Luke Catalyst</h1>
+  <nav>
+    <a href="#story" class="active">About</a>
+    <a href="#talks">Talks</a>
+    <a href="#work">Projects</a>
+    <a href="#ecosystem">Ecosystem</a>
+    <a href="#contact">Connect</a>
+  </nav>
 </header>
-
-<section class="hero" data-aos="fade-up">
-  <div>
-    <div class="kicker"><i class="fa-solid fa-wave-square"></i> AI × Community × Culture</div>
-    <h1><span class="grad">Speaker. Systems Architect.</span> Quiet Builder of the Future.</h1>
-    <p>I help founders, councils and communities weave AI, culture, and clean-tech into <b>living systems</b> that pay their own way. Crisp strategy, calm delivery, measurable value.</p>
-    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
-      <a class="cta" href="#contact">Book Strategy Call</a>
-      <a class="btn-ghost" href="#lead">Download 1‑Page Plan</a>
-    </div>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Speaker. Systems Architect. Quiet Builder of the Future.</h2>
+    <p>Equal parts beach philosopher, AI strategist, and decentralised dreamer. I help individuals and communities design systems that align spirit, structure and sustainability.</p>
+    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Book a Session</button>
   </div>
-  <div class="media" data-aos="zoom-in" data-aos-delay="100">
-    <iframe src="https://www.youtube.com/embed/O2KbuqycE5s?autoplay=1&mute=1&loop=1&playlist=O2KbuqycE5s" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
-    <div class="avatar"><img src="https://lukecatalyst.com/life-gallery/headshot.jpg" alt="Luke"/><span class="small">Minjerribah ↔ Global</span></div>
+  <iframe src="https://www.youtube.com/embed/O2KbuqycE5s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section>
+<section class="section" id="ecosystem">
+  <h2 style="text-align:center; color: var(--glow);">Ecosystem</h2>
+  <div class="features">
+    <div class="card"><h3><a href="https://alphainfnity.foundation" target="_blank">Alpha Infinity Foundation</a></h3></div>
+    <div class="card"><h3><a href="https://auraofintelligence.com" target="_blank">Aura of Intelligence</a></h3></div>
+    <div class="card"><h3><a href="https://quandamookafilmfestival.com" target="_blank">Quandamooka Intelligence</a></h3></div>
   </div>
 </section>
-
-<section id="work" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">What I Do</h2>
-    <div class="grid-3">
-      <div class="card glow-border" data-aos="fade-up" data-aos-delay="0">
-        <div class="icon"><i class="fa-solid fa-brain"></i></div>
-        <h3>Black‑Car Products</h3>
-        <p>One specific problem solved exceptionally well, with clear recurring revenue and a path to scale.</p>
-      </div>
-      <div class="card glow-border" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="fa-solid fa-flask"></i></div>
-        <h3>Lean Learning Loops</h3>
-        <p>Sell first, test fast, keep what works. Tight feedback cycles, transparent metrics, weekly iteration.</p>
-      </div>
-      <div class="card glow-border" data-aos="fade-up" data-aos-delay="200">
-        <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Interlocking Entities</h3>
-        <p>Brand, DAO, clinic/lab, events and education that reinforce each other — a system that hums.</p>
-      </div>
-    </div>
-  </div>
+<section class="section" id="contact">
+  <h2 style="text-align:center; color: var(--glow);">Connect</h2>
+  <form action="https://formsubmit.co/auraofintelligence@gmail.com" method="POST" style="max-width:500px;margin:0 auto">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Your Name" required style="margin-bottom:1rem; width:100%; padding:0.75rem;">
+    <input type="email" name="email" placeholder="Your Email" required style="margin-bottom:1rem; width:100%; padding:0.75rem;">
+    <textarea name="message" placeholder="What would you like to co-create?" rows="5" required style="width:100%; padding:0.75rem;"></textarea>
+    <button class="cta" type="submit" style="margin-top:1rem; width:100%;">Send Message</button>
+  </form>
 </section>
-
-<section id="portfolio" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">Portfolio Glimpses</h2>
-    <div class="gallery" data-aos="fade-up" data-aos-delay="100">
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb1.jpg" alt="XR & Wellness"></a>
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb2.jpg" alt="Festivals"></a>
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb3.jpg" alt="Energy"></a>
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb4.jpg" alt="Community"></a>
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb5.jpg" alt="XR"></a>
-      <a class="tile" href="https://lukecatalyst.com/life-gallery/" target="_blank"><img src="https://lukecatalyst.com/life-gallery/thumb6.jpg" alt="Travel"></a>
-    </div>
-  </div>
-</section>
-
-<section id="ecosystem" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">Ecosystem Links</h2>
-    <p class="small" data-aos="fade-up" data-aos-delay="100">A living network of projects and prototypes — tech, culture, governance.</p>
-    <div class="grid-3" data-aos="fade-up" data-aos-delay="120">
-      <a class="card glow-border" href="https://alphainfinity.foundation" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-infinity"></i> Alpha Infinity Foundation</h3>
-        <p>Global IP holder & spiritual custodianship for the ecosystem.</p>
-      </a>
-      <a class="card glow-border" href="https://auraofintelligence.com" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-sun"></i> Aura of Intelligence</h3>
-        <p>Digital twin, chrono‑therapeutics, and the AuraOS.</p>
-      </a>
-      <a class="card glow-border" href="https://quandamookafilmfestival.com" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-film"></i> Quandamooka Film Festival</h3>
-        <p>Culture, story, and place — celebrating Country and community.</p>
-      </a>
-      <a class="card glow-border" href="https://auraofintelligence.github.io/10_entities/" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-diagram-project"></i> 10 Entities</h3>
-        <p>The interoperable legal/operational stack powering the work.</p>
-      </a>
-      <a class="card glow-border" href="https://auraofintelligence.github.io/Queens_Venture/" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-crown"></i> Queens Venture</h3>
-        <p>Women‑led venture architecture for planetary regeneration.</p>
-      </a>
-      <a class="card glow-border" href="https://auraofintelligence.github.io/amity-point/" target="_blank" rel="noopener">
-        <h3><i class="fa-solid fa-location-dot"></i> Amity Point</h3>
-        <p>Place‑based prototypes on Minjerribah — living lab and home base.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="offers" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">Pick Your Entry Lane</h2>
-    <div class="pricing">
-      <div class="card price glow-border" data-aos="fade-up">
-        <div class="head"><h3><i class="fa-solid fa-magnifying-glass-chart"></i> AI Efficiency Audit</h3><div class="small">Fixed fee • 2 weeks</div></div>
-        <div class="body">
-          <ul>
-            <li>Process map + stack recommendations</li>
-            <li>Content & data ops quick wins</li>
-            <li>Training for your core team</li>
-          </ul>
-          <a class="cta" href="#contact">Enquire</a>
-        </div>
-      </div>
-      <div class="card price glow-border" data-aos="fade-up" data-aos-delay="100" style="border:1px solid rgba(66,242,164,.6)">
-        <div class="head"><h3><i class="fa-solid fa-seedling"></i> Aura Odyssey: 60‑Day Reset</h3><div class="small">Flagship • Limited cohorts</div></div>
-        <div class="body">
-          <ul>
-            <li>Digital twin onboarding & privacy setup</li>
-            <li>Chrono‑therapeutic session plan</li>
-            <li>Story, culture & place integration</li>
-          </ul>
-          <a class="cta" href="#contact">Apply</a>
-        </div>
-      </div>
-      <div class="card price glow-border" data-aos="fade-up" data-aos-delay="200">
-        <div class="head"><h3><i class="fa-solid fa-bullhorn"></i> Founders’ Story Engine</h3><div class="small">3 weeks • Done‑with‑you</div></div>
-        <div class="body">
-          <ul>
-            <li>3 “Who” scripts (30s/90s/3‑min)</li>
-            <li>Sales page + live shopping flow</li>
-            <li>Metrics & playbook handover</li>
-          </ul>
-          <a class="cta" href="#contact">Start</a>
-        </div>
-      </div>
-    </div>
-    <p class="small" style="margin-top:10px">Want something custom? <a href="#contact">Say hello</a> with your goals and constraints.</p>
-  </div>
-</section>
-
-<section id="proof" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">Proof & Words From The Field</h2>
-    <div class="testi" data-aos="fade-up" data-aos-delay="100">
-      <div class="card quote glow-border">
-        <img src="https://lukecatalyst.com/life-gallery/face1.jpg" alt=""/>
-        <div>
-          <p>“Clear, values‑aligned, and practical. We shipped in weeks, not months.”</p>
-          <div class="small">— Partner, AI strategy (India)</div>
-        </div>
-      </div>
-      <div class="card quote glow-border">
-        <img src="https://lukecatalyst.com/life-gallery/face2.jpg" alt=""/>
-        <div>
-          <p>“A story people can believe in — and a plan that pays for itself.”</p>
-          <div class="small">— Community org (QLD)</div>
-        </div>
-      </div>
-      <div class="card quote glow-border">
-        <img src="https://lukecatalyst.com/life-gallery/face3.jpg" alt=""/>
-        <div>
-          <p>“Best combo of narrative, tech and economics we’ve seen.”</p>
-          <div class="small">— Early‑stage founder</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="lead" class="section">
-  <div class="wrap">
-    <div class="card glow-border" data-aos="fade-up" style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center">
-      <div>
-        <h3>Free download: The 1‑Page System Plan</h3>
-        <p>My cheat‑sheet for turning story + system into revenue: Black‑Car Product, Lean Loop, and the 30‑day launch cadence. I’ll send occasional field notes; unsubscribe anytime.</p>
-        <form action="https://your-email-tool.com/forms/xyz" method="post">
-          <div class="row">
-            <div><input name="name" placeholder="Name" required></div>
-            <div><input type="email" name="email" placeholder="Email" required></div>
-          </div>
-          <button class="cta" type="submit" style="margin-top:12px">Send me the 1‑pager</button>
-        </form>
-      </div>
-      <div class="tile"><img src="https://lukecatalyst.com/life-gallery/onepager-mock.png" alt="1‑Page Plan"></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="wrap">
-    <h2 data-aos="fade-up">Book a strategy call</h2>
-    <p class="small" data-aos="fade-up" data-aos-delay="100">Tell me where you are and where you want to be. I’ll reply with a quick plan and booking link.</p>
-    <form class="card glow-border" data-aos="fade-up" data-aos-delay="150" action="https://your-crm-or-zapier-webhook" method="post" style="padding:18px">
-      <div class="row">
-        <div><input name="first_name" placeholder="First name" required></div>
-        <div><input type="email" name="email" placeholder="Email" required></div>
-      </div>
-      <textarea name="goal" rows="4" placeholder="Outcome you want in 90 days (e.g., launch paid pilot, set up LIVE commerce, ship 3‑offer funnel)"></textarea>
-      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
-        <button class="cta" type="submit">Request call</button>
-        <a class="btn-ghost" href="https://calendly.com/YOUR-LINK">Or pick a time</a>
-      </div>
-    </form>
-  </div>
-</section>
-
 <footer>
-  <div>© <script>document.write(new Date().getFullYear())</script> Luke Catalyst • Systems for Earth, Self and Future</div>
+  <p>© 2025 Luke Catalyst • Systems for Earth, Self and Future</p>
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script> AOS.init({ once:true, duration:700, easing:'ease-out-quart' }); </script>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+<div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">🔝</div>
 <script>
-  (async () => {
-    const engine = await tsParticles.load({ id: "particles", options: {
-      background: { color: "transparent" },
-      fpsLimit: 60,
-      particles: {
-        number: { value: 35 },
-        color: { value: ["#42f2a4", "#67d6e3", "#ffffff"] },
-        shape: { type: "circle" },
-        opacity: { value: 0.25 },
-        size: { value: { min: 1, max: 3 } },
-        links: { enable: true, color: "#2b3a68", opacity: 0.3, distance: 120 },
-        move: { enable: true, speed: 0.6 }
-      },
-      interactivity: {
-        events: { onHover: { enable: true, mode: "grab" }, onClick: { enable: false } },
-        modes: { grab: { distance: 120, links: { opacity: 0.5 } } }
-      },
-      detectRetina: true
-    }});
-  })();
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
 </script>
 </body>
 </html>
